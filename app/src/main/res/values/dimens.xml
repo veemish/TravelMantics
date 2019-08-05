@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_margin_standard">16dp</dimen>
+    <dimen name="text_margin_standard_1">16dp</dimen>
+    <dimen name="text_margin_large">24dp</dimen>
+    <dimen name="text_margin_standard_2">16dp</dimen>
+    <dimen name="text_margin_standard_3">16dp</dimen>
+    <dimen name="text_margin_standard_4">16dp</dimen>
+    <dimen name="text_margin_standard_5">16dp</dimen>
+    <dimen name="text_margin_standard_6">16dp</dimen>
+    <dimen name="text_margin_standard_7">16dp</dimen>
+</resources>
