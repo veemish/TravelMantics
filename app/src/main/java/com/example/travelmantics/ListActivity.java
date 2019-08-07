@@ -25,8 +25,9 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-         mFirebaseDatabase = FirebaseDatabase.getInstance();
-         mDatabaseReference = mFirebaseDatabase.getReference().child("TravelDeal");
+        FirebaseUtil.openFbReference("TravelDeal");
+         mFirebaseDatabase = FirebaseUtil.mFirebaseDatabase;
+         mDatabaseReference = FirebaseUtil.mDatabaseReference;
          mChildEventListener = new ChildEventListener() {
              @Override
              public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
