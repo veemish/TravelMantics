@@ -3,5 +3,6 @@
     <string name="title_hint">deal_title</string>
     <string name="price_hint">Price</string>
     <string name="description_hint">description</string>
+    <string name="save_menu">Save</string>
 
 </resources>
