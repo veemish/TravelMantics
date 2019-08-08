@@ -19,11 +19,10 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_standard_9"
-        android:layout_marginTop="@dimen/margin_standard_10"
-        android:layout_marginBottom="10dp"
-        android:textSize="@dimen/title_large"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:text="TextView"
+        android:textSize="@dimen/title_large"
         app:layout_constraintStart_toEndOf="@+id/imageDeal"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,8 +30,8 @@
         android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_standard_11"
-        android:layout_marginTop="@dimen/margin_standard_12"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/imageDeal"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
@@ -41,12 +40,11 @@
         android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_standard_13"
-        android:layout_marginEnd="@dimen/margin_standard_14"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorAccent"
         android:textSize="@dimen/text_price"
-        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
-        android:layout_marginBottom="5dp"
-        android:textColor="@color/colorAccent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

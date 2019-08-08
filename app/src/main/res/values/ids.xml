@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="imageView" type="id">imageView</item>
-    <item name="textView" type="id">tvTitle</item>
-    <item name="textView4" type="id">tvDescription</item>
+    <item name="tvTitle" type="id"/>
+    <item name="tvDescription" type="id"/>
+    <item name="imageDeal"  type="id"/>
 </resources>
