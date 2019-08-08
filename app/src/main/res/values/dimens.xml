@@ -9,4 +9,14 @@
     <dimen name="text_margin_standard_5">16dp</dimen>
     <dimen name="text_margin_standard_6">16dp</dimen>
     <dimen name="text_margin_standard_7">16dp</dimen>
+    <dimen name="margin_standard_7">10dp</dimen>
+    <dimen name="margin_standard_8">10dp</dimen>
+    <dimen name="margin_standard_9">8dp</dimen>
+    <dimen name="margin_standard_10">24dp</dimen>
+    <dimen name="margin_standard_11">8dp</dimen>
+    <dimen name="margin_standard_12">14dp</dimen>
+    <dimen name="margin_standard_13">8dp</dimen>
+    <dimen name="margin_standard_14">8dp</dimen>
+    <dimen name="title_large">24sp</dimen>
+    <dimen name="text_price">18sp</dimen>
 </resources>

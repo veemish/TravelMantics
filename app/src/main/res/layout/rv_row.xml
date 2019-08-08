@@ -1,12 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageDeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard_7"
+        android:layout_marginTop="@dimen/margin_standard_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="20sp" />
-</LinearLayout>
+        android:layout_marginStart="@dimen/margin_standard_9"
+        android:layout_marginTop="@dimen/margin_standard_10"
+        android:layout_marginBottom="10dp"
+        android:textSize="@dimen/title_large"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/imageDeal"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_standard_11"
+        android:layout_marginTop="@dimen/margin_standard_12"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/imageDeal"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_standard_13"
+        android:layout_marginEnd="@dimen/margin_standard_14"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/text_price"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/colorAccent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
