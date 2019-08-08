@@ -3,8 +3,11 @@ package com.example.travelmantics;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -26,7 +29,16 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         FirebaseUtil.openFbReference("TravelDeal");
-         mFirebaseDatabase = FirebaseUtil.mFirebaseDatabase;
+
+        RecyclerView rvDeals = (RecyclerView)findViewById(R.id.rvDeals);
+        final DealAdapter adapter = new DealAdapter();
+        rvDeals.setAdapter(adapter);
+        LinearLayoutManager  dealsLayoutManager =
+                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false) ;
+                       rvDeals.setLayoutManager(dealsLayoutManager);
+
+
+        /* mFirebaseDatabase = FirebaseUtil.mFirebaseDatabase;
          mDatabaseReference = FirebaseUtil.mDatabaseReference;
          mChildEventListener = new ChildEventListener() {
              @Override
@@ -58,6 +70,6 @@ public class ListActivity extends AppCompatActivity {
 
              }
          };
-         mDatabaseReference.addChildEventListener(mChildEventListener);
+         mDatabaseReference.addChildEventListener(mChildEventListener);*/
     }
 }
