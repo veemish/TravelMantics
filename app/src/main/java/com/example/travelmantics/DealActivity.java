@@ -82,8 +82,9 @@ public class DealActivity extends AppCompatActivity {
         deal.setPrice(txtPrice.getText().toString());
         if (deal.getId() == null) {
             mDatabaseReference.push().setValue(deal);
+
         }
-        else {
+        else if (deal.getId()!= null) {
             mDatabaseReference.child(deal.getId()).setValue(deal);
         }
     }
