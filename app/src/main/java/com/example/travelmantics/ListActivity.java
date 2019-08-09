@@ -57,6 +57,19 @@ public class ListActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        FirebaseUtil.detachListener();
+    }
+
+    @Override
+    protected  void  onResume(){
+
+        super.onResume();
+        FirebaseUtil.attachListener();
+    }
+
     }
 
 
