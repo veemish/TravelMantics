@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DownloadManager;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.net.URL;
 
@@ -34,6 +37,7 @@ public class DealActivity extends AppCompatActivity {
     EditText txtDescription;
     EditText txtPrice;
     TravelDeal deal;
+    ImageView  imageView;
 
 
     @Override
@@ -45,6 +49,8 @@ public class DealActivity extends AppCompatActivity {
        txtTitle = (EditText) findViewById(R.id.editText);
        txtPrice = (EditText) findViewById(R.id.editText2);
        txtDescription = (EditText) findViewById(R.id.editText3);
+       imageView = (ImageView) findViewById(R.id.image);
+
         Intent intent = getIntent();
         TravelDeal deal = (TravelDeal) intent.getSerializableExtra("Deal");
         if (deal == null) {
@@ -56,6 +62,7 @@ public class DealActivity extends AppCompatActivity {
         txtTitle.setText(deal.getTitle());
         txtDescription.setText(deal.getDescription());
         txtPrice.setText(deal.getPrice());
+          showImage(deal.getImageUrl());
         Button btn_img = findViewById(R.id.btn_img);
         btn_img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +72,7 @@ public class DealActivity extends AppCompatActivity {
                 intent.setType("image/jpeg");
                 intent.putExtra(Intent.EXTRA_LOCAL_ONLY , true);
                 startActivityForResult(intent.createChooser(intent ,  "Insert Picture" ), PICTURE_RESULT);
+
             }
         });
 
@@ -147,7 +155,14 @@ public class DealActivity extends AppCompatActivity {
 
     }
 
-    private void showImage(String Url){};
+    private void showImage(String url){
+      if (url != null &&  url.isEmpty() == false)  {
+
+          int width = Resources.getSystem().getDisplayMetrics().widthPixels;
+          Picasso.get().load(url).resize(width,width*2/3).centerCrop().into(imageView);
+      }
+
+    }
 
     private void saveDeal() {
         deal.setTitle(txtTitle.getText().toString());
